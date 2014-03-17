@@ -4,19 +4,48 @@
         <title>CSS 3D Cube</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- Stylesheets -->
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome.min.css"/>
         <link rel="stylesheet" href="css/cube.css"/>
+
+        <!-- Modernizr -->
+        <script src="js/modernizr.custom.min.js"></script>
     </head>
 
     <body>
         <div class="viewport">
             <div class="cube">
-                <div class="side-front"><h1>Front Side</h1></div>
-                <div class="side-back"><h1>Back Side</h1></div>
-                <div class="side-top"><h1>Top Side</h1></div>
-                <div class="side-bottom"><h1>Bottom Side</h1></div>
-                <div class="side-left"><h1>Left Side</h1></div>
-                <div class="side-right"><h1>Right Side</h1></div>
-            </div>
-        </div>
+                <div class="face face-front">
+                    <div class="pic"><img src="img/logo.png" alt="Front Image"/></div>
+                    <h1>CSS 3D Password</h1>
+                    <input type="password" placeholder="Password...">
+                    <i class="fa fa-lock"></i>
+                </div>
+
+                <div class="face face-right">
+
+                </div>
+
+                <div class="face face-back">
+
+                </div>
+
+                <div class="face face-left">
+
+                </div>
+
+                <div class="face face-top">
+
+                </div>
+                <div class="face face-bottom"></div>
+            </div><!-- end .cube -->
+        </div><!-- end .viewport -->
+
+        <!-- JavaScript -->
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="js/oridomi.min.js"></script>
     </body>
 </html>

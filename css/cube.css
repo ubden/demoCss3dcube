@@ -1,7 +1,34 @@
+/********* General Styles **********/
+
+html,
 body {
-    padding-top: 5em;
-    background: #FEFEFE;
+    width: 100%;
+    height: 100%;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../img/shadow.png') no-repeat center #FEFEFE;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, textarea {
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    outline: none;
+    color: #777;
+}
+
+textarea {
+    height: 100px;
+}
+
+/********* Cube Styles **********/
 
 .viewport {
     width: 380px;
@@ -17,104 +44,125 @@ body {
 .cube {
     width: 100%;
     height: 100%;
-    -webkit-transform: rotateX(0deg);
-    transform: rotateX(0deg);
+    -webkit-transform: translateZ(-190px) rotateY(0deg);
+    transform: translateZ(-190px) rotateX(0deg);
     -webkit-transform-style: preserve-3D;
     transform-style: preserve-3D;
-    -webkit-transition: all 3s;
-    transition: all 3s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
 }
 
-.cube div {
+.face {
     width: 100%;
     height: 100%;
-    /*opacity: .5;*/
     position: absolute;
-    text-align: center;
-    line-height: 100px;
 }
 
-.side-front {
-    background: #53BF6B;
+.face-front {
+    background: url('../img/dark.png') repeat #444349;
     -webkit-transform: translateZ(190px);
     transform: translateZ(190px);
 }
 
-.side-back {
-    background: #53BF6B;
+.face-back {
+    background: url('../img/light.png') repeat #DBDBDB;
     -webkit-transform: translateZ(-190px) rotateY(180deg);
     transform: translateZ(-190px) rotateY(180deg);
 }
 
-.side-top {
-    background: #838383;
+.face-top {
+    background: url('../img/dark.png') repeat #444349;
     -webkit-transform: translateY(-190px) rotateX(90deg);
     transform: translateY(-190px) rotateX(90deg);
 }
 
-.side-bottom {
-     background: #838383;
+.face-bottom {
+    background: url('../img/light.png') repeat #DBDBDB;
      -webkit-transform: translateY(190px) rotateX(-90deg);
      transform: translateY(190px) rotateX(-90deg);
  }
 
-.side-left {
-    background: #FAC564;
+.face-left {
+    background: url('../img/dark.png') repeat #444349;
     -webkit-transform: translateX(-190px) rotateY(-90deg);
     transform: translateX(-190px) rotateY(-90deg);
 }
 
-.side-right {
-    background: #FAC564;
+.face-right {
+    background: url('../img/light.png') repeat #DBDBDB;
     -webkit-transform: translateX(190px) rotateY(90deg);
     transform: translateX(190px) rotateY(90deg);
 }
 
-/* Animation */
+/******** Content Styles ********/
 
-/*@-webkit-keyframes Rotate {*/
-    /*0% {*/
-        /*-webkit-transform: rotateY(0deg);*/
-        /*transform: rotateY(0deg);*/
-    /*}*/
-    /*25% {*/
-        /*-webkit-transform: rotateY(90deg);*/
-        /*transform: rotateY(90deg);*/
-    /*}*/
-    /*50% {*/
-        /*-webkit-transform: rotateY(180deg);*/
-        /*transform: rotateY(180deg);*/
-    /*}*/
-    /*75% {*/
-        /*-webkit-transform: rotateY(270deg);*/
-        /*transform: rotateY(270deg);*/
-    /*}*/
-    /*100% {*/
-        /*-webkit-transform: rotateY(360deg);*/
-        /*transform: rotateY(360deg);*/
-    /*}*/
-/*}*/
+.face-front .pic {
+    width: 200px;
+    height: 200px;
+    padding: 4px;
+    margin: 20px auto 0px;
+    background: #FBFBFB;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(202, 203, 204, .8);
+}
 
-/*@keyframes Rotate {*/
-    /*0% {*/
-        /*-webkit-transform: rotateY(0deg);*/
-        /*transform: rotateY(0deg);*/
-    /*}*/
-    /*25% {*/
-        /*-webkit-transform: rotateY(90deg);*/
-        /*transform: rotateY(90deg);*/
-    /*}*/
-    /*50% {*/
-        /*-webkit-transform: rotateY(180deg);*/
-        /*transform: rotateY(180deg);*/
-    /*}*/
-    /*75% {*/
-        /*-webkit-transform: rotateY(270deg);*/
-        /*transform: rotateY(270deg);*/
-    /*}*/
-    /*100% {*/
-        /*-webkit-transform: rotateY(360deg);*/
-        /*transform: rotateY(360deg);*/
-    /*}*/
-/*}*/
+.face-front .pic img {
+    border-radius: 50%;
+}
+
+.face-front h1 {
+    padding: 0;
+    margin-top: 20px;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.6em;
+    color: #EEE;
+}
+
+.face-front input {
+    width: 150px;
+    margin: 20px auto 0px;
+    padding: 10px 10px 10px 40px;
+    border: none;
+    font-size: .9em;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 3px hsla(0, 0%, 0%, .5);
+}
+
+.face-front i {
+    position: absolute;
+    top: 307px;
+    left: 103px;
+    font-size: 1.5em;
+    color: #777;
+}
+
+.face-right input,
+.face-back input,
+textarea {
+    width: 320px;
+    padding: 10px;
+    margin: 20px auto 0px;
+    border-top: 1px solid #999;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    box-shadow: inset 1px 1px 3px hsla(0, 0%, 0%, .5);
+    clear: both;
+    resize: none;
+}
+
+.face-back textarea {
+    height: 70px;
+}
+
+.face-back iframe {
+    display: block;
+    margin: 20px auto 0px;
+}
+
 
