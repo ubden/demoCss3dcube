@@ -15,29 +15,49 @@
     </head>
 
     <body>
-        <div class="viewport">
-            <div class="cube">
+        <div id="viewport">
+            <div id="cube">
                 <div class="face face-front">
                     <div class="pic"><img src="img/logo.png" alt="Front Image"/></div>
                     <h1>CSS 3D Password</h1>
-                    <input type="password" placeholder="Password...">
+                    <input type="password" placeholder="Password..." id="input-nxt">
                     <i class="fa fa-lock"></i>
                 </div>
 
                 <div class="face face-right">
-
+                    <input type="text" class="m40" placeholder="Name"/>
+                    <div id="wrap">
+                        <input id="dateTrigger" type="text" placeholder="Date Joined">
+                        <div id="date"><div id="middleDark"></div></div>
+                        <div id="dateOver"></div>
+                    </div>
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Address"></textarea>
+                    <a href="#" class="prev" id="r-back"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                    <a href="#" class="next" id="r-next">Next <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
 
                 <div class="face face-back">
-
+                    <iframe src="//player.vimeo.com/video/77257784" width="340" height="191" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <textarea placeholder="Description"></textarea>
+                    <a href="#" class="light-prev" id="b-back"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                    <a href="#" class="light-next" id="b-next">Next <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
 
                 <div class="face face-left">
-
+                    <h1>CSS 3D Cube</h1>
+                    <p>Dickie davies admiral Sergeant major landed gentry, knavish rogue Sergeant major circus
+                        strongman dickie davies landed gentry will you do the fandango barber shop quartet admiral
+                        lip warmer ned flanders? Graeme souness dodgy uncle clive old west sheriff.</p>
+                    <p>Lady magnets cesar romero middle eastern despot Fallen eyebrow rugged, en time-warped cabbie
+                        lady magnets dolor sit amet blue oyster bar lady magnets cesar romero imperial boxing champion
+                        middle eastern despot. <a href="#" id="backwards">Go Back</a> </p>
+                    <a href="#" id="finish" title="Finish..."><i class="fa fa-arrow-circle-up"></i></a>
                 </div>
 
                 <div class="face face-top">
-
+                    <i class="fa fa-check-circle-o"></i>
+                    <h1>Thank You!</h1>
                 </div>
                 <div class="face face-bottom"></div>
             </div><!-- end .cube -->
@@ -47,5 +67,6 @@
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
         <script src="js/oridomi.min.js"></script>
+        <script src="js/cube.js"></script>
     </body>
 </html>
