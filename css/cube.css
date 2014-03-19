@@ -1,0 +1,428 @@
+/********* General Styles **********/
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../img/shadow.png') no-repeat center #f1f1f1;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, textarea {
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    outline: none;
+    color: #777;
+}
+
+textarea {
+    height: 100px;
+}
+
+/********* Cube Styles **********/
+
+#viewport {
+    width: 380px;
+    height: 380px;
+    margin: -190px 0 0 -190px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+#cube {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateZ(-190px);
+    transform: translateZ(-190px);
+    -webkit-transform-style: preserve-3D;
+    transform-style: preserve-3D;
+    -webkit-transition: all 1.6s;
+    transition: all 1.6s;
+}
+
+#cube.rf {
+    -webkit-transform: translateZ(-190px) rotateY(-90deg);
+    transform: translateZ(-190px) rotateY(-90deg);
+}
+
+#cube.bf {
+    -webkit-transform: translateZ(-190px) rotateY(-180deg);
+    transform: translateZ(-190px) rotateY(-180deg);
+}
+
+#cube.lf {
+    -webkit-transform: translateZ(-190px) rotateY(-270deg);
+    transform: translateZ(-190px) rotateY(-270deg);
+}
+
+#cube.tf {
+    -webkit-transform: translateZ(-190px) rotateY(-270deg) rotateZ(-90deg);
+    transform: translateZ(-190px) rotateY(-270deg) rotateZ(-90deg);
+}
+
+#cube.ff {
+    -webkit-transform: translateZ(-190px) rotateY(0deg);
+    transform: translateZ(-190px) rotateY(0deg);
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.face-front {
+    background: url('../img/dark.png') repeat #444349;
+    -webkit-transform: translateZ(190px);
+    transform: translateZ(190px);
+}
+
+.face-back {
+    background: url('../img/dark.png') repeat #DBDBDB;
+    -webkit-transform: translateZ(-190px) rotateY(180deg);
+    transform: translateZ(-190px) rotateY(180deg);
+}
+
+.face-top {
+    background: url('../img/dark.png') repeat #444349;
+    -webkit-transform: translateY(-190px) rotateX(90deg) rotateZ(90deg);
+    transform: translateY(-190px) rotateX(90deg) rotateZ(90deg);
+}
+
+.face-bottom {
+    background: url('../img/light.png') repeat #DBDBDB;
+     -webkit-transform: translateY(190px) rotateX(-90deg);
+     transform: translateY(190px) rotateX(-90deg);
+ }
+
+.face-left {
+    background: url('../img/light.png') repeat #444349;
+    -webkit-transform: translateX(-190px) rotateY(-90deg);
+    transform: translateX(-190px) rotateY(-90deg);
+}
+
+.face-right {
+    background: url('../img/light.png') repeat #DBDBDB;
+    -webkit-transform: translateX(190px) rotateY(90deg);
+    transform: translateX(190px) rotateY(90deg);
+}
+
+/******** Content Styles ********/
+
+.face-front .pic {
+    width: 200px;
+    height: 200px;
+    padding: 4px;
+    margin: 20px auto 0px;
+    background: #FBFBFB;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(202, 203, 204, .8);
+}
+
+.face-front .pic img {
+    border-radius: 50%;
+}
+
+.face-front h1 {
+    padding: 0;
+    margin-top: 20px;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.6em;
+    color: #EEE;
+}
+
+.face-front input {
+    width: 150px;
+    margin: 20px auto 0px;
+    padding: 10px 10px 10px 40px;
+    border: none;
+    font-size: .9em;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 3px hsla(0, 0%, 0%, .5);
+}
+
+.face-front i {
+    position: absolute;
+    top: 307px;
+    left: 103px;
+    font-size: 1.5em;
+    color: #777;
+}
+
+.face-right input,
+.face-back input,
+textarea {
+    width: 320px;
+    padding: 10px;
+    margin: 20px auto 0px;
+    border-top: 1px solid #999;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    box-shadow: inset 1px 1px 3px hsla(0, 0%, 0%, .5);
+    clear: both;
+    resize: none;
+}
+
+.face-back textarea {
+    height: 70px;
+}
+
+.face-back iframe {
+    display: block;
+    margin: 20px auto 0px;
+}
+
+.prev,
+.light-prev {
+    display: block;
+    margin: 15px 0 0 30px;
+    float: left;
+    font-size: 1em;
+    -webkit-transition: margin .5s;
+    transition: margin .5s;
+}
+
+.prev {
+    color: #666;
+}
+
+.prev:hover,
+.light-prev:hover {
+    margin: 15px 0 0 20px;
+}
+
+.next,
+.light-next {
+    display: block;
+    margin: 15px 30px 0 0;
+    float: right;
+    -webkit-transition: margin .5s;
+    transition: margin .5s;
+}
+
+.next {
+    color: #666;
+}
+
+.next:hover,
+.light-next:hover {
+    margin: 15px 20px 0 0;
+}
+
+.light-next,
+.light-prev {
+    color: #c0c0c0;
+}
+
+.prev i,
+.next i {
+    margin-top: .1em;
+    font-size: 1.2em;
+}
+
+.face-left h1 {
+    margin: 30px 0 0 30px;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1em;
+    color: #666;
+}
+
+.face-left p {
+    margin: 20px 30px 0 30px;
+    padding: 0;
+    color: #666;
+    font-size: .9em;
+    line-height: 1.5em;
+}
+
+.face-top i {
+    display: block;
+    position: absolute;
+    top: 120px;
+    left: 170px;
+    font-size: 3em;
+    color: #6495ed;
+}
+
+.face-top h1 {
+    margin: 200px auto 0;
+    text-align: center;
+    font-size: 3em;
+    font-weight: normal;
+    color: #ddd;
+}
+
+#finish {
+    position: absolute;
+    bottom: 11px;
+    left: 135px;
+    margin: 15px auto 0;
+    padding: 0 0 0 38px;
+    float: none;
+    font-size: 2em;
+    color: #666;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+#finish:hover {
+    color: #698c00;
+}
+
+#backwards {
+    color: #698c00;
+}
+
+
+
+/*********** jQuery Calendar Styles ************/
+
+#date,
+#dateOver {
+    width: 650px;
+    height: 247px;
+    margin-left: -135px;
+    position: absolute;
+    background: #fff;
+}
+
+#dateOver {
+    background: url("../img/grid.png") repeat-x left bottom #fff;
+}
+
+#date.hidden,
+#dateOver {
+    display: none;
+}
+
+#middleDark {
+    width: 217px;
+    height: 100%;
+    margin: 0 auto;
+    background: #f9f9f8;
+}
+
+#ui-datepicker-div {
+    background: #fff;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .45);
+}
+
+table {
+    border-spacing: 0px;
+    float: left;
+}
+
+thead {
+    background: #e8ecf1;
+    color: #91AA9D;
+}
+
+thead th {
+    padding: 5px;
+    font-size: .9em;
+    font-weight: normal;
+}
+
+.ui-datepicker-group-middle {
+    min-height: 247px;
+    background: url("../img/grid.png") repeat-x left bottom #e6e6e6;
+}
+
+.ui-datepicker-group-middle thead {
+    background: #e0e5eb;
+}
+
+.ui-datepicker-title {
+    width: auto;
+    text-align: center;
+    font-size: .9em;
+    line-height: 35px;
+    color: #666;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+    display: block;
+    height: 35px;
+    padding: 0 .3em;
+    float: left;
+    background: #eaeaea;
+    font-size: 1.3em;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    line-height: 35px;
+    color: #c4c4c4;
+    cursor: pointer;
+}
+
+#ui-datepicker-div .ui-datepicker-next {
+    float: right;
+}
+
+td {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    font-size: .8em;
+    text-align: center;
+}
+
+td a {
+    display: block;
+    width: auto;
+    height: 100%;
+    line-height: 29px;
+    color: #777;
+}
+
+#ui-datepicker-div .ui-datepicker-group-middle td {
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+td.ui-datepicker-current-day a {
+    background: #BAC0CA;
+    color: #fff;
+}
+
+.ui-datepicker-group {
+    width: 217px;
+    float: left;
+}
+
+.ui-datepicker-row-break {
+    display: none;
+}
+
+div .ui-datepicker-next {
+    float: right;
+}
+
+
+
+
+
+
+
+
